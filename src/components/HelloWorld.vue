@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { dizhi } from '@/utils/validate'
+
 export default {
   name: 'HelloWorld',
   props: {
