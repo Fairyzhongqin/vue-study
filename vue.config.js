@@ -1,9 +1,10 @@
 const path = require('path')
 module.exports = {
-  publicPath: './',            // 公共,基本路径
-
+  // publicPath: './',            // 公共,基本路径
+  // 基本路径
+  publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
   // 输出文件目录，不同的环境打不同包名
-  outputDir: process.env.NODE_ENV === "development" ? 'devdist' : 'dist',
+  outputDir: process.env.NODE_ENV === "production" ? 'dist' : 'devdist',
   assetsDir: 'static',        // 默认会在目录同时生成三个静态目录：js,css,img
   lintOnSave: false,          // 关闭eslint代码检查
   filenameHashing: false,     // 生成的静态资源名, 默认加了hash, 命名.后面的为hash：chunk-2d0aecf8.71e621e9
